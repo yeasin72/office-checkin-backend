@@ -36,14 +36,16 @@ const Checkin =  require('../models/checkinmodel')
             _id: req.body.checkinid
         }
         const minute = 1000 * 60;
+        const currenttime = new Date()
         
         try {
             const findcheckout = await Checkout.findOne(filter)
             const findcheckin = await Checkin.findOne(checkoutfilter)
             if (findcheckin != null && findcheckout != null) {
-
+                
                 if (findcheckin.accessTime > findcheckout.accessTime) {
-                    if ((Math.round(findcheckin.accessTime.getTime() / minute) - Math.round(findcheckout.accessTime.getTime() / minute)) > 30) {
+                
+                    if ((Math.round(currenttime.getTime() / minute) - Math.round(findcheckin.accessTime.getTime() / minute)) > 30) { //  change the time from here
                         
                         const updatedata = {
                             name: findcheckout.name,
