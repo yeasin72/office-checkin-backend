@@ -15,7 +15,8 @@ const Accesslog =  require('../models/logmodel')
     router.post('/', async (req, res) => {
         const accessdata = new Accesslog({
             name: req.body.name, 
-            accessType: req.body.accessType
+            accessType: req.body.accessType,
+            user: req.body.user
         })
         try {
             const newaccess = await accessdata.save()

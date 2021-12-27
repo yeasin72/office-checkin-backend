@@ -10,6 +10,10 @@ const checkoutSchema = new mongoose.Schema({
         required: true,
         default: 'Checkout'
     },
+    user: {
+        type: String,
+        required: true
+    },
     accessTime: {
         type: Date,
         required: true,

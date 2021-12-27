@@ -9,6 +9,10 @@ const accesslogSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    user:{
+        type: String,
+        required: true,
+    },
     accessTime: {
         type: Date,
         required: true,

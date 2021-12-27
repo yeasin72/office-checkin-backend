@@ -32,5 +32,9 @@ app.use('/check-in', checkin)
 const checkout = require('./routes/checkout')
 app.use('/checkout', checkout)
 
+// user router
+const user = require('./routes/user')
+app.use('/user', user)
+
 
 app.listen(8000, () => console.log("app started"))

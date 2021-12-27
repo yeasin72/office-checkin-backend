@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+
+
 const checkinSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -9,6 +11,10 @@ const checkinSchema = new mongoose.Schema({
         type: String,
         required: true,
         default: 'Checkin'
+    },
+    user: {
+        type: String,
+        required: true
     },
     accessTime: {
         type: Date,
